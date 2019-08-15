@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/add/add",
+    "pages/edit/edit",
+    "pages/manage/manage",
+    "pages/my/mydetail/mydetail"
+  ],
+  "window": {
+    "defaultTitle": "故障报修",
+    "backgroundColor": "#F5F5F9"
+  },
+  "tabBar": {
+    "textColor": "#404040",
+    "selectedColor": "#108ee9",
+    "backgroundColor": "#F5F5F9",
+    "items": [
+      {
+        "pagePath": "pages/add/add",
+        "icon": "images/todo.png",
+        "activeIcon": "images/todo-active.png",
+        "name": "我要报修"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "icon": "images/done.png",
+        "activeIcon": "images/done-active.png",
+        "name": "我的报修"
+      },
+      {
+        "pagePath": "pages/manage/manage",
+        "icon": "images/doing.png",
+        "activeIcon": "images/doing-active.png",
+        "name": "报修管理"
+      }
+    ]
+  }
+}

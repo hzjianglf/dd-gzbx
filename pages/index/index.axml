@@ -1,0 +1,3 @@
+<view>
+  <view class="notice" a:if="{{showNotice}}">{{notice}}</view>
+</view>

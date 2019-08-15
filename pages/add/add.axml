@@ -1,0 +1,31 @@
+<view>
+  <view style="margin-top: 10px;" />
+  <list>
+    <input-item data-field="name" disabled placeholder="报修人员" type="text" value="{{name}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      报修人员
+    </input-item>
+    <picker-item data-field="bank" placeholder="选择报修类型" value="{{bank}}" onPickerTap="onPickerTap">
+      报修类型
+    </picker-item>
+    <input-item data-field="place" placeholder="报修地点" type="text" value="{{place}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      报修地点
+    </input-item>
+    <input-item data-field="lxfs" placeholder="联系方式" type="number" value="{{lxfs}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      联系方式
+    </input-item>
+    <view class="page-section">
+      <view class="page-section-title">报修内容</view>
+      <view class="page-section-demo">
+        <textarea onBlur="bindTextAreaBlur" auto-height placeholder="请输入" data-field="remark" value="{{remark}}" onInput="onItemInput" maxlength="200"/>
+      </view>
+    </view>
+    <view class="img-contain">
+      <image a:for="{{filePaths}}" mode="scaleToFill" src="{{item}}"/>
+      <view class="addImg" onTap="chooseImage">+</view>
+    </view>
+  </list>
+  <view style="margin: 10px;">
+    <!-- <button type="primary" onTap="chooseImage">上传图片</button> -->
+    <button type="primary" onTap="submit">提交</button>
+    <view>
+    </view>

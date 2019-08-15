@@ -1,0 +1,58 @@
+<view>
+  <tabs tabs="{{tabs}}" showPlus="{{false}}" onTabClick="handleTabClick" onChange="handleTabChange" activeTab="{{activeTab}}">
+    <!-- 待处理 -->
+    <block>
+      <tab-content key="0">
+        <view class="tab-content">
+          <view style="flex:1;">
+            <block a:for="{{list}}" a:if="{{item.dqjd == '待处理'}}">
+              <list-item thumb="/images/icon1.jpg" arrow="{{item.arrow}}" onClick="onItemClick" data-id="{{item.id}}"  index="items-multiple-{{index}}" last="{{index === (itemsThumbMultiple.length - 1)}}" key="items-multiple-{{index}}" multipleLine="{{true}}">
+                  {{item.lxmc}}
+                <view class="am-list-brief">{{item.whenCreatedString}}</view>
+                <view class="{{item.dqjd == '待处理' ? 'todo' : ''}}{{item.dqjd == '已完成' ? 'done' : ''}}{{item.dqjd == '维修中' ? 'doing' : ''}}" slot="extra">
+                    ({{item.dqjd}})
+                </view>
+              </list-item>
+            </block>
+          </view>
+        </view>
+      </tab-content>
+    </block>
+    <!-- 维修中 -->
+    <block>
+      <tab-content key="1">
+        <view class="tab-content">
+          <view  style="flex:1;">
+            <block a:for="{{list}}" a:if="{{item.dqjd == '维修中'}}">
+              <list-item thumb="/images/icon1.jpg" arrow="{{item.arrow}}" onClick="onItemClick" data-id="{{item.id}}" index="items-multiple-{{index}}" last="{{index === (itemsThumbMultiple.length - 1)}}" key="items-multiple-{{index}}" multipleLine="{{true}}">
+                  {{item.lxmc}}
+                <view class="am-list-brief">{{item.whenCreatedString}}</view>
+                <view class="{{item.dqjd == '待处理' ? 'todo' : ''}}{{item.dqjd == '已完成' ? 'done' : ''}}{{item.dqjd == '维修中' ? 'doing' : ''}}" slot="extra">
+                    ({{item.dqjd}})
+                </view>
+              </list-item>
+            </block>
+          </view>
+        </view>
+      </tab-content>
+    </block>
+    <!-- 已完成 -->
+    <block>
+      <tab-content key="2">
+        <view class="tab-content">
+          <view  style="flex:1;">
+            <block a:for="{{list}}" a:if="{{item.dqjd == '已完成'}}">
+              <list-item thumb="/images/icon1.jpg" arrow="{{item.arrow}}" onClick="onItemClick" data-id="{{item.id}}"  index="items-multiple-{{index}}" last="{{index === (itemsThumbMultiple.length - 1)}}" key="items-multiple-{{index}}" multipleLine="{{true}}">
+                  {{item.lxmc}}
+                <view class="am-list-brief">{{item.whenCreatedString}}</view>
+                <view class="{{item.dqjd == '待处理' ? 'todo' : ''}}{{item.dqjd == '已完成' ? 'done' : ''}}{{item.dqjd == '维修中' ? 'doing' : ''}}" slot="extra">
+                    ({{item.dqjd}})
+                </view>
+              </list-item>
+            </block>
+          </view>
+        </view>
+      </tab-content>
+    </block>
+  </tabs>
+</view>

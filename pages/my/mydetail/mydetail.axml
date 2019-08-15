@@ -1,0 +1,28 @@
+<view>
+  <view style="margin-top: 10px;" />
+  <list>
+    <input-item data-field="name" type="text" disabled="{{true}}" value="{{name}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      报修人员
+    </input-item>
+    <input-item data-field="name" type="text" disabled="{{true}}" value="{{bank}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      报修类型
+    </input-item>
+    <input-item data-field="place" disabled="{{true}}" type="text" value="{{place}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      报修地点
+    </input-item>
+    <input-item data-field="place" disabled="{{true}}" type="text" value="{{lxfs}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      联系方式
+    </input-item>
+    <view class="page-section">
+      <view class="page-section-title">报修内容</view>
+      <view class="page-section-demo">
+        <textarea onBlur="bindTextAreaBlur" disabled="{{true}}"  auto-height data-field="remark" value="{{remark}}" maxlength="200"/>
+      </view>
+    </view>
+  </list>
+  <view>
+    <image a:for="{{filePaths}}" mode="scaleToFill" src="{{serverUrl + item}}"/>
+  </view>
+  <view style="margin: 10px;" a:if="{{state !== '已取消'}}">
+    <button type="primary" onTap="cancel">取消</button>
+  </view>

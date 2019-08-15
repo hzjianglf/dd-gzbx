@@ -1,0 +1,47 @@
+<view>
+  <view style="margin-top: 10px;" />
+  <list>
+    <input-item data-field="name" type="text" disabled="{{true}}" value="{{name}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      报修人员
+    </input-item>
+    <input-item data-field="name" type="text" disabled="{{true}}" value="{{bank}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      报修类型
+    </input-item>
+    <input-item data-field="place" disabled="{{true}}" type="text" value="{{place}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      报修地点
+    </input-item>
+    <input-item data-field="place" disabled="{{true}}" type="text" value="{{lxfs}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      联系方式
+    </input-item>
+    <view class="page-section">
+      <view class="page-section-title">报修内容</view>
+      <view class="page-section-demo">
+        <textarea onBlur="bindTextAreaBlur" disabled="{{true}}"  auto-height data-field="remark" value="{{remark}}" maxlength="200"/>
+      </view>
+    </view>
+  </list>
+  <view>
+    <image a:for="{{filePaths}}" mode="scaleToFill" src="{{serverUrl + item}}"/>
+  </view>
+  <list>
+    <input-item data-field="wxry" type="text" disabled="{{state == '已完成'}}" value="{{wxry}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      维修人员
+    </input-item>
+    <input-item data-field="wxrydh" type="text" disabled="{{state == '已完成'}}" value="{{wxrydh}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      联系方式
+    </input-item>
+    <input-item data-field="gj" type="text" disabled="{{state == '已完成'}}" value="{{gj}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      报修估价
+    </input-item>
+    <input-item data-field="clnr" type="text" disabled="{{state == '已完成'}}" value="{{clnr}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      处理内容
+    </input-item>
+    <input-item data-field="bxcl" disabled="{{true}}" a:if="{{state !== '待处理'}}" a:for="{{bxclList}}" type="text" value="{{item.clr + item.whenCreatedString}}" clear="{{true}}" onInput="onItemInput" onClear="onClear">
+      处理人员
+    </input-item>
+  </list>
+  <view style="margin: 10px;" a:if="{{state !== '已完成'}}">
+    <button type="primary" data-st="维修中" onTap="save">处理</button>
+    <button type="primary" data-st="已完成" onTap="save">已完成</button>
+    <view>
+    </view>

@@ -1,0 +1,30 @@
+.extra {
+  background-image: url('https://gw.alipayobjects.com/zos/rmsportal/dOfSJfWQvYdvsZiJStvg.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  opacity: 0.2;
+  height: 20px;
+  width: 20px;
+  padding-left: 10px;
+}
+.img-contain{
+  padding: 10px 0
+}
+.img-contain image{
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+}
+.addImg{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  border: 1px solid #bfbfbf;
+  font-size: 50px;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
